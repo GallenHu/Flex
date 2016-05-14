@@ -56,7 +56,7 @@
     {% include "partial/gtm.html" %}
   {% endif %}
   <aside>
-    <div>
+    <div class="aside-content">
       <a href="{{ SITEURL }}">
         {% if SITELOGO %}
         <img src="{{ SITELOGO }}" alt="{{ SITETITLE }}" title="{{ SITETITLE }}">
@@ -82,6 +82,9 @@
         <li><a class="sc-{{ name }}" href="{{ link }}" target="_blank"><i class="fa fa-{{ name }}"></i></a></li>
         {% endfor %}
       </ul>
+    </div>
+    <div class="sidectrl" onclick="toggle()">
+      <div class="sidebar"></div>
     </div>
   </aside>
   <main>
@@ -136,5 +139,43 @@
   {% endif %}
 
   {% block additional_js %}{% endblock %}
+
+  <script type="text/javascript">
+    var FULLPAGE = {
+      className: 'fullpage',
+      $aside: document.querySelector('aside'),
+      $main: document.querySelector('main')
+    };
+
+    function goFullPage() {
+      FULLPAGE.$aside.className = FULLPAGE.className;
+      FULLPAGE.$main.className = FULLPAGE.className;
+      window.localStorage.setItem(FULLPAGE.className, 'true');
+    }
+
+    function exitFullPage() {
+      FULLPAGE.$aside.className = '';
+      FULLPAGE.$main.className = '';
+      window.localStorage.removeItem(FULLPAGE.className);
+    }
+
+    function init() {
+      var isFullPage = window.localStorage.getItem(FULLPAGE.className);
+      isFullPage && goFullPage();
+    }
+
+    function toggle() {
+      var $aside = document.querySelector('aside');
+      var $main  = document.querySelector('main');
+
+      if (!!FULLPAGE.$aside.className) {
+        exitFullPage();
+      } else {
+        goFullPage();
+      }
+    }
+
+    init();
+  </script>
 </body>
 </html>

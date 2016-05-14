@@ -12,8 +12,9 @@ Developed For Chinese Users base on original theme [Pelican](https://github.com/
 
 - Add: Configure `STRFTIME` to Formate Date
 - Add: Configure `HOMENAME` to Change the Display Name Of Home Link (e.g. `Home` -> `主页`)
+- Add: Aside Toggle Button
 - Change: Translate Key Words to Chinese
-- Change: Base Color Change
+- Change: Base Color
 - Change: Replace SITETITLE in Aside with SITESUBTITLE (For SEO)
 - Delete: Google Fonts
 - And Some Little Changes ...

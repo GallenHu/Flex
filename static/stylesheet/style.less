@@ -2,8 +2,9 @@
 @light-orange: #FF5A09;
 @green: #30A080;
 @dark-green: #2a8c70;
+@light-green: #eff5f2;
 @white:  #ffffff;
-@grey: #333333;
+@grey: #555555;
 @light-grey:  #eeeeee;
 @med-grey:  #999999;
 @dark-grey: #242121;
@@ -83,19 +84,19 @@ img {
 }
 
 aside {
-  background-color: @grey;
-  color: @white;
+  background-color: @light-green;
+  color: @grey;
   text-align: center;
 
   a {
-    color: @white;
+    color: @grey;
   }
 
   a:hover {
-    color: @light-grey;
+    color: @dark-grey;
   }
 
-  div {
+  div.aside-content {
     padding: 20px;
     margin: 0;
 
@@ -121,6 +122,38 @@ aside {
         line-height: 1.6em;
         font-size: 1.28em;
       }
+    }
+  }
+
+  .sidectrl {
+    display: none;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 26px;
+    cursor: pointer;
+    z-index: 50;
+    .sidebar {
+      position: absolute;
+      width: 16px;
+      height: 85px;
+      top: 312px;
+      right: 0;
+      margin-top: -43px;
+      background: top left;
+      background-image: url(/theme/img/sidebar_icon.png);
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      zoom: 1;
     }
   }
 }
@@ -398,7 +431,7 @@ ul.social {
     left: 0;
     overflow-y: auto;
 
-    div {
+    div.aside-content {
       padding: 36px 18px;
 
       nav {
@@ -414,6 +447,28 @@ ul.social {
         padding-top: 32px;
       }
     }
+
+    .sidectrl {
+      display: block;
+    }
+  }
+
+  aside.fullpage {
+    width: 26px;
+    div.aside-content {
+      display: none;
+    }
+    .sidectrl {
+      .sidebar {
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transform: rotate(180deg);
+        zoom: 1;
+      }
+    }
+
   }
 
   main {
@@ -431,5 +486,10 @@ ul.social {
         }
       }
     }
+  }
+
+  main.fullpage {
+    width: 80%;
+    left: 12%;
   }
 }
