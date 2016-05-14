@@ -12,7 +12,7 @@
       {% for article in dates %}
         {% if article.locale_date != previous_date %}
           {% set previous_date = article.locale_date %}
-      <dt>{{ article.locale_date }}</dt>
+      <dt>{{ article.date|strftime(STRFTIME) }}</dt>
         {% endif %}
       <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
       {% endfor %}

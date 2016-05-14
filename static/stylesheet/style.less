@@ -1,5 +1,7 @@
 @orange: #D9411E;
 @light-orange: #FF5A09;
+@green: #30A080;
+@dark-green: #2a8c70;
 @white:  #ffffff;
 @grey: #333333;
 @light-grey:  #eeeeee;
@@ -7,6 +9,7 @@
 @dark-grey: #242121;
 @sans: 'Source Sans Pro', 'Verdana', sans-serif;
 @mono: 'Source Code Pro', 'Consolas', monospace;
+@chinese: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 
 html, body {
   width: 100%;
@@ -52,18 +55,18 @@ body {
   padding: 0;
   background-color: @white;
   color: @dark-grey;
-  font-family: @sans;
+  font-family: @chinese;
   font-size: 1.02em;
   line-height: 1.2em;
 }
 
 a {
-  color: @orange;
+  color: @green;
   text-decoration: none;
 }
 
 a:hover {
-  color: @light-orange;
+  color: @dark-green;
 }
 
 hr {
@@ -117,7 +120,6 @@ aside {
         display: inline;
         line-height: 1.6em;
         font-size: 1.28em;
-        text-transform: lowercase;
       }
     }
   }
@@ -277,8 +279,8 @@ main {
 }
 
 a.btn {
-  background-color: @orange;
-  padding: .4em .6em;
+  background-color: @green;
+  padding: .4em 1.6em;
   font-size: .9em;
   line-height: 1;
   color: @white;
@@ -289,7 +291,7 @@ a.btn {
 }
 
 a.btn:hover {
-  background-color: @light-orange;
+  background-color: @dark-green;
 }
 
 .center {

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ DEFAULT_LANG }}">
 <head>
-  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
 
   {% if USE_LESS %}
     <link rel="stylesheet/less" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/stylesheet/style.less">
@@ -65,8 +64,7 @@
         <img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/profile.png" alt="{{ SITETITLE }}" title="{{ SITETITLE }}">
         {% endif %}
       </a>
-      <h1><a href="{{ SITEURL }}">{{ SITETITLE }}</a></h1>
-      {% if SITESUBTITLE %}<p>{{ SITESUBTITLE }}</p>{% endif %}
+      <h1><a href="{{ SITEURL }}">{{ SITESUBTITLE }}</a></h1>
       {% if pages or LINKS %}
       <nav>
         <ul class="list">
@@ -89,7 +87,11 @@
   <main>
     {% if MAIN_MENU %}
     <nav>
+      {% if HOMENAME %}
+      <a href="{{ SITEURL }}">{{ HOMENAME }}</a>
+      {% else %}
       <a href="{{ SITEURL }}">Home</a>
+      {% endif %}
       {% for title, link in MENUITEMS %}
       <a href="{{ link }}">{{ title }}</a>
       {% endfor %}
@@ -110,7 +112,6 @@
         {% include "partial/cc_license.html" %}
       {% else %}
         <p>&copy; {{ AUTHOR }} {{ COPYRIGHT_YEAR }}</p>
-        {% include "partial/flex.html" %}
         {% if STATUSCAKE %}
           {% include "partial/statuscake.html" %}
         {% endif %}
