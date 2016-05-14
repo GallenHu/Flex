@@ -1,8 +1,12 @@
 # Flex-cn
 
+Flex主题汉化版
+
 A minimalist [Pelican](http://blog.getpelican.com/) theme.
 
 Developed For Chinese Users base on original theme [Pelican](https://github.com/alexandrevicenzi/Flex)
+
+[Demo](http://blog.hinpc.com)
 
 ## Update
 
